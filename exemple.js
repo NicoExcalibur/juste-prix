@@ -21,5 +21,18 @@ input.addEventListener('keyup', () => {
 });
 
 // Etape 5 - Agir à l'envoi du formulaire
+form.addEventListener('submit', (e) => {
 
+    e.preventDefault();
+
+    if(isNaN(input.value) || input.value == '') {
+
+        input.style.borderColor = 'red';
+        
+    } else {
+        
+        input.style.borderColor = 'silver';
+    }
+
+});
 // Etape 6 - Créer la fonction vérifier
