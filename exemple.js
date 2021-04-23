@@ -10,6 +10,8 @@ error.style.display = 'none';
 
 // Etape 3 - Générer un nombre aléatoire
 let randomNumber = Math.floor(Math.random() * 1001);
+let coups = 0;
+let currentNumber;
 
 // Etape 4 - Vérifier que l'utilisateur donne bien un nombre
 input.addEventListener('keyup', () => {
@@ -30,8 +32,10 @@ form.addEventListener('submit', (e) => {
         input.style.borderColor = 'red';
         
     } else {
-        
+        coups++;
         input.style.borderColor = 'silver';
+        currentNumber = input.value;
+        input.value = '';
     }
 
 });
