@@ -6,7 +6,7 @@ let error = document.querySelector('small');
 console.log(form);
 
 // Etape 2 - Cacher l'erreur
-
+error.style.display = 'none';
 
 // Etape 3 - Générer un nombre aléatoire
 
