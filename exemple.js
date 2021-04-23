@@ -9,6 +9,11 @@ console.log(form);
 error.style.display = 'none';
 
 // Etape 3 - Générer un nombre aléatoire
+let randomNumber = (1000) => {
+
+    return Math.floor(Math.random() * Math.floor(1000));
+
+}
 
 // Etape 4 - Vérifier que l'utilisateur donne bien un nombre
 
