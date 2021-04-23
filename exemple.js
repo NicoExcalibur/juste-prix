@@ -13,6 +13,33 @@ let randomNumber = Math.floor(Math.random() * 1001);
 let coups = 0;
 let currentNumber;
 
+// Etape 6 - Créer la fonction vérifier
+
+function verify(number) {
+
+    let instruction = document.createElement('div');
+
+    if (number > randomNumber) {
+        // c'est moins
+        instruction.textContent = "#" + coups + " C'est moins !";
+        form.append(instruction);
+        instruction.classList.add('instruction', 'plus');
+
+    } else if (number < randomNumber ) {
+        //c'est plus
+        instruction.textContent = "#" + coups + " C'est plus !";
+        form.append(instruction);
+        instruction.classList.add('instruction', 'moins');
+
+    } else {
+        //C'est bon
+        instruction.textContent = "#" + coups + " Bien joué ! Vous avez trouvé le juste prix !";
+        form.append(instruction);
+        instruction.classList.add('instruction', 'fini');
+    }
+
+}
+
 // Etape 4 - Vérifier que l'utilisateur donne bien un nombre
 input.addEventListener('keyup', () => {
     if (isNaN(input.value)) {
@@ -36,7 +63,6 @@ form.addEventListener('submit', (e) => {
         input.style.borderColor = 'silver';
         currentNumber = input.value;
         input.value = '';
+        verify(currentNumber);
     }
-
 });
-// Etape 6 - Créer la fonction vérifier
