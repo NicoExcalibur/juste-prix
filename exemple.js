@@ -22,21 +22,21 @@ function verify(number) {
     if (number > randomNumber) {
         // c'est moins
         instruction.textContent = "#" + coups + " ( " + number + " ) " + "C'est moins !";
-        form.append(instruction);
         instruction.classList.add('instruction', 'plus');
 
     } else if (number < randomNumber ) {
         //c'est plus
         instruction.textContent = "#" + coups + " ( " + number + " ) " +  " C'est plus !";
-        form.append(instruction);
         instruction.classList.add('instruction', 'moins');
 
     } else {
         //C'est bon
         instruction.textContent = "#" + coups + " ( " + number + " ) " +  " Bien joué ! Vous avez trouvé le juste prix !";
-        form.append(instruction);
         instruction.classList.add('instruction', 'fini');
     }
+
+    //ajout de lélément devant les autres
+    document.querySelector('#instructions').prepend(instruction);
 
 }
 
